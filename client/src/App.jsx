@@ -12,17 +12,17 @@ class App extends React.Component {
   }
 
 
-  // componentDidMount() {
-  //   console.log('componentDidMount');
-  //   console.log(this.state.courseId);
+  componentDidMount() {
+    console.log('componentDidMount');
+    console.log(this.state.courseId);
 
-  //   // Api call to courseContent.
-  //   axios.get(`127.0.0.1:9800/content/item/?courseId=${this.state.courseId}`)
-  //     .then((response) => {
-  //       console.log(response.data);
-  //     });
+    // Api call to courseContent.
+    axios.get(`127.0.0.1:9800/content/item/?courseId=${this.state.courseId}`)
+      .then((response) => {
+        console.log(response.data);
+      });
 
-  // }
+  }
 
   render() {
 
