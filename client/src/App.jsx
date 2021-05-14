@@ -8,40 +8,27 @@ class App extends React.Component {
     super(props);
     const queries = qs.parse(window.location.search);
     const courseId = Number(queries['?courseId']);
-    this.state = {
-      courseId
-    };
+    this.state = {courseId};
   }
 
 
   componentDidMount() {
-    console.log(this.state.courseId);
-    // Api call to courseContent.
-    // axios.get('/courseContent')
-    //   .then((response) => {
-    //     console.log(response.data);
-    //   });
 
-    axios.get('/courseContent')
+    // Api call to courseContent.
+    axios.get(`127.0.0.1:9800/content/item?courseId=${this.state.courseId}`)
       .then((response) => {
         console.log(response.data);
-        this.setState({content: response.data});
       });
+
   }
 
   render() {
 
     return (
       <div>
-        <span>Hello World</span>
-        {this.state.courseContent &&
-          <CourseContent courseId={this.state.courseId} />
-        }
-        {this.state.content &&
-        <div>
-          <div dangerouslySetInnerHTML={{__html: this.state.content}}></div>
-          <CourseContent courseId={this.state.courseId}/>
-        </div>
+        <span>Hello Second World</span>
+        {this.state.courseContent && 
+          <CourseContent />
         }
       </div>
     );
