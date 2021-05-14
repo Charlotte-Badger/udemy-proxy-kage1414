@@ -8,7 +8,9 @@ class App extends React.Component {
     super(props);
     const queries = qs.parse(window.location.search);
     const courseId = Number(queries['?courseId']);
-    this.state = {courseId};
+    this.state = {
+      courseId
+    };
   }
 
 
