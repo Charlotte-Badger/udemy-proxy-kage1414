@@ -15,12 +15,15 @@ class App extends React.Component {
 
 
   componentDidMount() {
-    const script = document.createElement('script');
-
+    const content = document.createElement('script');
     script.src = `http://127.0.0.1:9800/content/item?courseId=${this.state.courseId}`;
     script.async = true;
+    document.body.appendChild(content);
 
-    document.body.appendChild(script);
+    const reviews = document.createElement('script');
+    script.src = `http://127.0.0.1:2712?courseId=${this.state.courseId}`;
+    script.async = true;
+    document.body.appendChild(reviews);
   }
 
   render() {
