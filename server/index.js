@@ -4,9 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const PORT = 3000;
 
-app.use('/', express.static(path.join(__dirname, '..', 'client', 'dist')), () => {
-  console.log('request');
-});
+app.use('/', express.static(path.join(__dirname, '..', 'client', 'dist')));
 
 // app.get('/', express.static(path.join(__dirname, 'client', 'dist')))
 
