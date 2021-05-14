@@ -8,28 +8,26 @@ class App extends React.Component {
     super(props);
     const queries = qs.parse(window.location.search);
     const courseId = Number(queries['?courseId']);
-    this.state = {courseId};
+    this.state = {
+      courseId
+    };
   }
 
 
   componentDidMount() {
+    const script = document.createElement('script');
 
-    // Api call to courseContent.
-    axios.get(`127.0.0.1:9800/content/item?courseId=${this.state.courseId}`)
-      .then((response) => {
-        console.log(response.data);
-      });
+    script.src = `http://127.0.0.1:9800/content/item?courseId=${this.state.courseId}`;
+    script.async = true;
 
+    document.body.appendChild(script);
   }
 
   render() {
 
     return (
       <div>
-        <span>Hello Second World</span>
-        {this.state.courseContent && 
-          <CourseContent />
-        }
+        <div id="content"></div>
       </div>
     );
 
