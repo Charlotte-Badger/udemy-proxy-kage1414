@@ -15,6 +15,7 @@ class App extends React.Component {
 
 
   componentDidMount() {
+<<<<<<< HEAD
     const content = document.createElement('script');
     script.src = `http://127.0.0.1:9800/content/item?courseId=${this.state.courseId}`;
     script.async = true;
@@ -24,13 +25,32 @@ class App extends React.Component {
     script.src = `http://127.0.0.1:2712?courseId=${this.state.courseId}`;
     script.async = true;
     document.body.appendChild(reviews);
+=======
+    console.log('componentDidMount');
+    console.log(this.state.courseId);
+
+    // Api call to courseContent.
+    axios.get(`127.0.0.1:9800/content/item/?courseId=${this.state.courseId}`)
+      .then((response) => {
+        console.log(response.data);
+      });
+
+>>>>>>> 3ce61fd26f33c1bbc735e23177e9cb2a82188fa0
   }
 
   render() {
 
     return (
       <div>
+<<<<<<< HEAD
         <div id="content"></div>
+=======
+        <span>Hello Second World</span>
+        <span>{this.state.courseId}</span>
+        {this.state.courseContent && 
+          <CourseContent />
+        }
+>>>>>>> 3ce61fd26f33c1bbc735e23177e9cb2a82188fa0
       </div>
     );
 
