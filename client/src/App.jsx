@@ -13,21 +13,38 @@ class App extends React.Component {
     };
   }
 
-
   componentDidMount() {
-    const script = document.createElement('script');
+    const content = document.createElement('script');
+    content.src = 'http://127.0.0.1:9800/bundle';
+    content.async = true;
+    document.body.appendChild(content);
 
-    script.src = `http://127.0.0.1:9800/content/item?courseId=${this.state.courseId}`;
-    script.async = true;
+    const sidebar = document.createElement('script');
+    sidebar.src = 'http://127.0.0.1:3004/bundle';
+    sidebar.async = true;
+    document.body.appendChild(sidebar);
 
-    document.body.appendChild(script);
+    const reviews = document.createElement('script');
+    reviews.src = 'http://127.0.0.1:2712/bundle';
+    reviews.async = true;
+    document.body.appendChild(reviews);
+
+    const overview = document.createElement('script');
+    overview.src = 'http://127.0.0.1:3002/bundle';
+    overview.async = true;
+    document.body.appendChild(overview);
   }
 
   render() {
 
     return (
       <div>
+        Proxy
+        <div id="view"></div>
         <div id="content"></div>
+        <div id="sidebar"></div>
+        <div id="app"></div>
+
       </div>
     );
 
