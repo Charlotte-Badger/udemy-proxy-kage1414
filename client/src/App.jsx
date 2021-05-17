@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import qs from 'qs';
+import {Service, CourseContent, Sidebar, Container, Reviews, StickySidebar} from './StyledComponents.js';
 
 class App extends React.Component {
 
@@ -38,13 +39,15 @@ class App extends React.Component {
   render() {
 
     return (
-      <div>
-        <div id="view"></div>
-        <div id="content"></div>
-        <div id="sidebar"></div>
-        <div id="app"></div>
+      <Container>
+        {/* <Service id="view"></Service> */}
+        <CourseContent id="content"></CourseContent>
+        <Sidebar>
+          <StickySidebar id="sidebar"></StickySidebar>
+        </Sidebar>
+        <Reviews id="app"></Reviews>
 
-      </div>
+      </Container>
     );
 
   }
