@@ -13,44 +13,37 @@ class App extends React.Component {
     };
   }
 
-
   componentDidMount() {
-<<<<<<< HEAD
     const content = document.createElement('script');
-    script.src = `http://127.0.0.1:9800/content/item?courseId=${this.state.courseId}`;
-    script.async = true;
+    content.src = 'http://127.0.0.1:9800/bundle';
+    content.async = true;
     document.body.appendChild(content);
 
+    const sidebar = document.createElement('script');
+    sidebar.src = 'http://127.0.0.1:3004/bundle';
+    sidebar.async = true;
+    document.body.appendChild(sidebar);
+
     const reviews = document.createElement('script');
-    script.src = `http://127.0.0.1:2712?courseId=${this.state.courseId}`;
-    script.async = true;
+    reviews.src = 'http://127.0.0.1:2712/bundle';
+    reviews.async = true;
     document.body.appendChild(reviews);
-=======
-    console.log('componentDidMount');
-    console.log(this.state.courseId);
 
-    // Api call to courseContent.
-    axios.get(`127.0.0.1:9800/content/item/?courseId=${this.state.courseId}`)
-      .then((response) => {
-        console.log(response.data);
-      });
-
->>>>>>> 3ce61fd26f33c1bbc735e23177e9cb2a82188fa0
+    const overview = document.createElement('script');
+    overview.src = 'http://127.0.0.1:3002/bundle';
+    overview.async = true;
+    document.body.appendChild(overview);
   }
 
   render() {
 
     return (
       <div>
-<<<<<<< HEAD
+        <div id="view"></div>
         <div id="content"></div>
-=======
-        <span>Hello Second World</span>
-        <span>{this.state.courseId}</span>
-        {this.state.courseContent && 
-          <CourseContent />
-        }
->>>>>>> 3ce61fd26f33c1bbc735e23177e9cb2a82188fa0
+        <div id="sidebar"></div>
+        <div id="app"></div>
+
       </div>
     );
 
