@@ -42,9 +42,9 @@ class App extends React.Component {
       <Container>
         {/* <Service id="view"></Service> */}
         <CourseContent id="content"></CourseContent>
-        <Sidebar>
-          <StickySidebar id="sidebar"></StickySidebar>
-        </Sidebar>
+        {/* <Sidebar> */}
+          <Sidebar id="sidebar"></Sidebar>
+        {/* </Sidebar> */}
         <Reviews id="app"></Reviews>
 
       </Container>
