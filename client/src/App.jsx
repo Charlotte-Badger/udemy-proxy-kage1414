@@ -31,7 +31,7 @@ class App extends React.Component {
     document.body.appendChild(reviews);
 
     const overview = document.createElement('script');
-    overview.src = 'http://127.0.0.1:3002/bundle';
+    overview.src = 'http://127.0.0.1:3100/overview.js';
     overview.async = true;
     document.body.appendChild(overview);
   }
@@ -40,12 +40,12 @@ class App extends React.Component {
 
     return (
       <Container>
-        {/* <Service id="view"></Service> */}
+        <Service id="app"></Service>
         <CourseContent id="content"></CourseContent>
         {/* <Sidebar> */}
-          <Sidebar id="sidebar"></Sidebar>
+        <Sidebar id="sidebar"></Sidebar>
         {/* </Sidebar> */}
-        <Reviews id="app"></Reviews>
+        <Reviews id="reviews"></Reviews>
 
       </Container>
     );
