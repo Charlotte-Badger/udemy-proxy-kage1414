@@ -20,12 +20,16 @@ class App extends React.Component {
     document.body.appendChild(content);
 
     const sidebar = document.createElement('script');
+<<<<<<< HEAD
     sidebar.src = 'http://127.0.0.1:3004/bundle';
+=======
+    sidebar.src = 'http://127.0.0.1:3004/index.js';
+>>>>>>> edd94978cc87436518aa5aac6e963e0cae4d85c4
     sidebar.async = true;
     document.body.appendChild(sidebar);
 
     const reviews = document.createElement('script');
-    reviews.src = 'http://127.0.0.1:2712/bundle';
+    reviews.src = 'http://127.0.0.1:2712/reviewBundle.js';
     reviews.async = true;
     document.body.appendChild(reviews);
 
@@ -39,7 +43,6 @@ class App extends React.Component {
 
     return (
       <div>
-        Proxy
         <div id="view"></div>
         <div id="content"></div>
         <div id="sidebar"></div>
