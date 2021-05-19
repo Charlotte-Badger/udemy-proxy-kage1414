@@ -21,11 +21,7 @@ class App extends React.Component {
     document.body.appendChild(content);
 
     const sidebar = document.createElement('script');
-<<<<<<< HEAD
-    sidebar.src = 'http://127.0.0.1:3004/bundle';
-=======
     sidebar.src = 'http://127.0.0.1:3004/index.js';
->>>>>>> edd94978cc87436518aa5aac6e963e0cae4d85c4
     sidebar.async = true;
     document.body.appendChild(sidebar);
 
@@ -46,11 +42,8 @@ class App extends React.Component {
       <Container>
         <Service id="app"></Service>
         <CourseContent id="content"></CourseContent>
-        {/* <Sidebar> */}
         <Sidebar id="sidebar"></Sidebar>
-        {/* </Sidebar> */}
         <Reviews id="reviews"></Reviews>
-
       </Container>
     );
 
