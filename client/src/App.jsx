@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log('headers', window.headers);
+    
     const content = document.createElement('script');
     content.src = 'http://ec2-18-130-234-175.eu-west-2.compute.amazonaws.com:9800/bundle';
     content.async = true;
