@@ -42,7 +42,7 @@ class App extends React.Component {
       <Container>
         <Service id="app"></Service>
         <CourseContent id="content"></CourseContent>
-        {/* <Sidebar id="sidebar"></Sidebar> */}
+        <Sidebar id="sidebar"></Sidebar>
         <Reviews id="reviews"></Reviews>
       </Container>
     );
