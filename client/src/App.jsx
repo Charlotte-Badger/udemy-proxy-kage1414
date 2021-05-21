@@ -40,10 +40,10 @@ class App extends React.Component {
 
     return (
       <Container>
-        <Service id="app"></Service>
+        {/* <Service id="app"></Service> */}
         <CourseContent id="content"></CourseContent>
-        <Sidebar id="sidebar"></Sidebar>
-        <Reviews id="reviews"></Reviews>
+        {/* <Sidebar id="sidebar"></Sidebar> */}
+        {/* <Reviews id="reviews"></Reviews> */}
       </Container>
     );
 
