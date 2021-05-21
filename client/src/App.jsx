@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import qs from 'qs';
 import {Service, CourseContent, Sidebar, Container, Reviews, StickySidebar} from './StyledComponents.js';
 // import {headers} from '../../server/headers.js';
@@ -16,7 +15,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    
+
     const content = document.createElement('script');
     content.src = 'http://ec2-18-130-234-175.eu-west-2.compute.amazonaws.com:9800/bundle';
     content.async = true;
