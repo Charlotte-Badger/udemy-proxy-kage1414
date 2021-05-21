@@ -27,14 +27,6 @@ export const Sidebar = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
-export const StickySidebar = styled.div`
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  background-color: yellow;
-  padding: 50px;
-`;
-
 export const Reviews = styled.div`
   float: left;
   max-width: 700px;

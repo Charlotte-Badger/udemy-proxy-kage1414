@@ -1,7 +1,6 @@
 import React from 'react';
 import qs from 'qs';
-import {Service, CourseContent, Sidebar, Container, Reviews, StickySidebar} from './StyledComponents.js';
-// import {headers} from '../../server/headers.js';
+import {Service, CourseContent, Sidebar, Container, Reviews} from './StyledComponents.js';
 
 class App extends React.Component {
 
