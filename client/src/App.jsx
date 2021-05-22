@@ -40,9 +40,9 @@ class App extends React.Component {
 
     return (
       <div>
-        <Container>
-          <Service id="overview"></Service>
-        </Container>
+        <div>
+          <div id="overview"></div>
+        </div>
         <Container>
           <CourseContent id="content"></CourseContent>
           <Sidebar id="sidebar"></Sidebar>
