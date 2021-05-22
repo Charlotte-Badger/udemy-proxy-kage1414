@@ -21,17 +21,17 @@ class App extends React.Component {
     document.body.appendChild(content);
 
     const sidebar = document.createElement('script');
-    sidebar.src = 'http://127.0.0.1:3004/index.js';
+    sidebar.src = '127.0.0.1:3004/index.js';
     sidebar.async = true;
     document.body.appendChild(sidebar);
 
     const reviews = document.createElement('script');
-    reviews.src = 'http://127.0.0.1:2712/reviewBundle.js';
+    reviews.src = '127.0.0.1:2712/reviewBundle.js';
     reviews.async = true;
     document.body.appendChild(reviews);
 
     const overview = document.createElement('script');
-    overview.src = 'http://127.0.0.1:3000/overview.js';
+    overview.src = '127.0.0.1:3000/overview.js';
     overview.async = true;
     document.body.appendChild(overview);
   }
