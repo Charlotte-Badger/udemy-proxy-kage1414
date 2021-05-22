@@ -25,26 +25,30 @@ class App extends React.Component {
     sidebar.async = true;
     document.body.appendChild(sidebar);
 
-    // const reviews = document.createElement('script');
-    // reviews.src = 'http://127.0.0.1:2712/reviewBundle.js';
-    // reviews.async = true;
-    // document.body.appendChild(reviews);
+    const reviews = document.createElement('script');
+    reviews.src = 'http://127.0.0.1:2712/reviewBundle.js';
+    reviews.async = true;
+    document.body.appendChild(reviews);
 
-    // const overview = document.createElement('script');
-    // overview.src = 'http://127.0.0.1:3100/overview.js';
-    // overview.async = true;
-    // document.body.appendChild(overview);
+    const overview = document.createElement('script');
+    overview.src = 'http://127.0.0.1:3000/overview.js';
+    overview.async = true;
+    document.body.appendChild(overview);
   }
 
   render() {
 
     return (
-      <Container>
-        <Service id="app"></Service>
-        <CourseContent id="content"></CourseContent>
-        <Sidebar id="sidebar"></Sidebar>
-        <Reviews id="reviews"></Reviews>
-      </Container>
+      <div>
+        <div>
+          <div id="overview"></div>
+        </div>
+        <Container>
+          <CourseContent id="content"></CourseContent>
+          <Sidebar id="sidebar"></Sidebar>
+          <Reviews id="reviews"></Reviews>
+        </Container>
+      </div>
     );
 
   }
