@@ -16,6 +16,7 @@ export const CourseContent = styled.div`
 
 export const Sidebar = styled.div`
   // margin-left: 796px;
+  background-color: white;
   margin: 48px;
   padding: 24px;
   max-width: 292px;
