@@ -23,11 +23,26 @@ class App extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const queries = qs.parse(window.location.search);
-    const courseId = Number(queries['?courseId']);
-    this.setState({ courseId });
+    const id = Number(e.target.courseId.value);
 
-    location.href = `/?courseId=${e.target.courseId.value}`;
+    if (id > 100 || id < 1) {
+      this.setState({
+        outOfRange: true,
+        outOfRangeValue: id
+      });
+    } else {
+      this.setState({
+        outOfRange: false,
+        outOfRangeValue: undefined
+      });
+
+      const queries = qs.parse(window.location.search);
+      const courseId = Number(queries['?courseId']);
+      this.setState({ courseId });
+
+      location.href = `/?courseId=${e.target.courseId.value}`;
+
+    }
   }
 
   render() {
@@ -47,15 +62,24 @@ class App extends React.Component {
       );
     } else {
       return (
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="courseId">Enter courseId</label>
-          <input type="text" id="courseId"></input>
-          <button type="submit">Enter</button>
-        </form>
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <label htmlFor="courseId">Enter courseId between 1-100</label>
+            <br/>
+            <input type="text" id="courseId"></input>
+            <br/>
+            <button type="submit">Enter</button>
+          </form>
+          {this.state.outOfRange &&
+            <div style={{ color: 'red' }}>
+              <span>Please choose a courseId between 1-100</span>
+              <br/>
+              <span>Received value: <span style={{ color: 'black' }}>{this.state.outOfRangeValue}</span></span>
+            </div>
+          }
+        </div>
       );
     }
-
-
   }
 
 }
