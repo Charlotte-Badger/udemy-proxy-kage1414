@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   margin: 48px;
-  max-width: 1200px;
+  max-width: 1185px;
 `;
 
 export const Service = styled.div`
