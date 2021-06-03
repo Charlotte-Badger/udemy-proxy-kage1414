@@ -32,3 +32,9 @@ export const Reviews = styled.div`
   /* float: left; */
   max-width: 700px;
 `;
+
+export const Centered = styled.div`
+  /* position: fixed; */
+  /* left: 50%; */
+  /* transform: translate(-50%); */
+`;

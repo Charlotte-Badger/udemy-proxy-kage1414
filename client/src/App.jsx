@@ -1,6 +1,6 @@
 import React from 'react';
 import qs from 'qs';
-import {Service, CourseContent, Sidebar, Container, Reviews} from './StyledComponents.js';
+import {CourseContent, Sidebar, Container, Reviews, Centered} from './StyledComponents.js';
 
 class App extends React.Component {
 
@@ -49,7 +49,7 @@ class App extends React.Component {
 
     if (this.state.courseId) {
       return (
-        <div>
+        <Centered>
           <div>
             <div id="overview"></div>
           </div>
@@ -58,7 +58,7 @@ class App extends React.Component {
             <Sidebar id="sidebar"></Sidebar>
             <Reviews id="reviews"></Reviews>
           </Container>
-        </div>
+        </Centered>
       );
     } else {
       return (
