@@ -10,7 +10,7 @@ export const Service = styled.div`
 `;
 
 export const CourseContent = styled.div`
-  float: left;
+  /* float: left; */
   max-width: 700px;
 `;
 
@@ -29,6 +29,6 @@ export const Sidebar = styled.div`
 `;
 
 export const Reviews = styled.div`
-  float: left;
+  /* float: left; */
   max-width: 700px;
 `;
