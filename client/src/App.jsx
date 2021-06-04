@@ -1,6 +1,6 @@
 import React from 'react';
 import qs from 'qs';
-import {CourseContent, Sidebar, Container, Reviews, Centered} from './StyledComponents.js';
+import {CourseContent, Sidebar, Container, Reviews, InnerContainer, Overview, SidebarAbs} from './StyledComponents.js';
 
 class App extends React.Component {
 
@@ -13,11 +13,37 @@ class App extends React.Component {
 
     if (courseId) {
       this.state = {
-        courseId
+        courseId,
+        sidebarPosition: {
+          position: 'absolute',
+          top: '100px'
+        }
       };
     } else {
       this.state = {};
     }
+
+    this.setSidebarPosition = this.setSidebarPosition.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.setSidebarPosition);
+  }
+
+  setSidebarPosition() {
+
+    if (window.scrollY < 530) {
+      this.setState({sidebarPosition: {
+        position: 'absolute',
+        top: '100px'
+      }});
+    } else {
+      this.setState({sidebarPosition: {
+        position: 'fixed',
+        top: '25px'
+      }});
+    }
+
   }
 
   handleSubmit(e) {
@@ -49,16 +75,18 @@ class App extends React.Component {
 
     if (this.state.courseId) {
       return (
-        <Centered>
-          <div>
-            <div id="overview"></div>
-          </div>
+        <div>
+          <Overview id="overview"></Overview>
           <Container>
-            <CourseContent id="content"></CourseContent>
-            <Sidebar id="sidebar"></Sidebar>
-            <Reviews id="reviews"></Reviews>
+            <InnerContainer>
+              <div style={{display: 'inline-block'}}>
+                <CourseContent id="content"></CourseContent>
+                <Reviews id="reviews"></Reviews>
+              </div>
+              <Sidebar id="sidebar" style={this.state.sidebarPosition} ></Sidebar>
+            </InnerContainer>
           </Container>
-        </Centered>
+        </div>
       );
     } else {
       return (
