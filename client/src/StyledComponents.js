@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: 48px;
-  max-width: 1185px;
+`;
+
+export const InnerContainer = styled.div`
+  width: 50%;
+  margin: auto;
 `;
 
 export const Service = styled.div`
@@ -10,25 +13,21 @@ export const Service = styled.div`
 `;
 
 export const CourseContent = styled.div`
-  float: left;
   max-width: 700px;
 `;
 
 export const Sidebar = styled.div`
-  // margin-left: 796px;
   background-color: white;
-  margin: 48px;
-  padding: 24px;
   max-width: 292px;
-  // float: right;
   border-radius: 4px;
-  position: fixed;
-  right: 48px;
-  top: 24px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: inline-block;
+  position: fixed;
+  top: 25px;
 `;
 
 export const Reviews = styled.div`
-  float: left;
-  max-width: 700px;
+`;
+
+export const Overview = styled.div`
 `;
