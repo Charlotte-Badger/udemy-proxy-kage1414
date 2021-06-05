@@ -1,6 +1,7 @@
 import React from 'react';
 import qs from 'qs';
 import {CourseContent, Sidebar, Container, Reviews, InnerContainer, Overview, SidebarAbs} from './StyledComponents.js';
+import SelectCourse from './SelectCourse.jsx';
 
 class App extends React.Component {
 
@@ -72,10 +73,9 @@ class App extends React.Component {
   }
 
   render() {
-
-    if (this.state.courseId) {
-      return (
-        <div>
+    return (
+      <div>
+        <div style={this.state.courseId ? {display: 'block'} : {display: 'none'}}>
           <Overview id="overview"></Overview>
           <Container>
             <InnerContainer>
@@ -87,27 +87,12 @@ class App extends React.Component {
             </InnerContainer>
           </Container>
         </div>
-      );
-    } else {
-      return (
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <label htmlFor="courseId">Enter courseId between 1-100</label>
-            <br/>
-            <input type="text" id="courseId"></input>
-            <br/>
-            <button type="submit">Enter</button>
-          </form>
-          {this.state.outOfRange &&
-            <div style={{ color: 'red' }}>
-              <span>Please choose a courseId between 1-100</span>
-              <br/>
-              <span>Received value: <span style={{ color: 'black' }}>{this.state.outOfRangeValue}</span></span>
-            </div>
-          }
-        </div>
-      );
-    }
+        {!this.state.courseId &&
+            <SelectCourse handleSubmit={this.handleSubmit} outOfRange={this.state.outOfRange} />
+        }
+      </div>
+        
+    );
   }
 
 }

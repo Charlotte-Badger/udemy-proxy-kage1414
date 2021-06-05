@@ -17,10 +17,10 @@ export const CourseContent = styled.div`
 `;
 
 export const Sidebar = styled.div`
+  margin-left: 50px;
   background-color: white;
-  max-width: 292px;
   border-radius: 4px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08), 0 4px 12px 0 rgba(0, 0, 0, 0.08);
   display: inline-block;
   position: fixed;
   top: 25px;
