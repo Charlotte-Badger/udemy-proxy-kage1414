@@ -60,13 +60,15 @@ class App extends React.Component {
       this.setState({sidebarPosition: {
         position: 'absolute',
         top: '100px',
-        zIndex: '5'
+        zIndex: '5',
+        animationDuration: '0ms'
       }});
     } else {
       this.setState({sidebarPosition: {
         position: 'fixed',
         top: '25px',
-        zIndex: '1001'
+        zIndex: '1001',
+        animationDuration: '1000ms'
       }});
     }
 

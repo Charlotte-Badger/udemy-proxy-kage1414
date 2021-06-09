@@ -1,6 +1,8 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 
 export const Container = styled.div`
+  /* width: 50%;
+  margin: auto; */
 `;
 
 export const InnerContainer = styled.div`
@@ -17,6 +19,15 @@ export const CourseContent = styled.div`
   margin-bottom: 50px;
 `;
 
+export const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
 export const Sidebar = styled.div`
   margin-left: 50px;
   background-color: white;
@@ -25,6 +36,7 @@ export const Sidebar = styled.div`
   display: inline-block;
   position: fixed;
   top: 25px;
+  animation-name: ${fadeIn};
 `;
 
 export const Reviews = styled.div`
