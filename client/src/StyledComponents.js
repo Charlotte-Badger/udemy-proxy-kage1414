@@ -14,6 +14,7 @@ export const Service = styled.div`
 
 export const CourseContent = styled.div`
   max-width: 700px;
+  margin-bottom: 50px;
 `;
 
 export const Sidebar = styled.div`

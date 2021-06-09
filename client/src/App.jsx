@@ -29,19 +29,44 @@ class App extends React.Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.setSidebarPosition);
+
+    const body = document.body;
+
+    let overview = document.createElement('script');
+    overview.async = true;
+    overview.src = 'https://charlotte-badger-overview.s3.amazonaws.com/overview.js';
+    body.appendChild(overview);
+
+    let review = document.createElement('script');
+    review.async = true;
+    review.src = 'https://charlotte-badger-reviews.s3-us-west-1.amazonaws.com/reviewBundle.js';
+    body.appendChild(review);
+
+    let sidebar = document.createElement('script');
+    sidebar.async = true;
+    sidebar.src = 'https://charlotte-badger-sidebar.s3-us-west-1.amazonaws.com/sidebar.js';
+    body.appendChild(sidebar);
+
+    let content = document.createElement('script');
+    content.async = true;
+    content.src = 'https://charlotte-badger-course-content-bundles.s3.eu-west-2.amazonaws.com/course-content.js';
+    body.appendChild(content);
   }
 
   setSidebarPosition() {
+    const overview = document.getElementById('overview');
 
-    if (window.scrollY < 530) {
+    if (window.scrollY < overview.clientHeight) {
       this.setState({sidebarPosition: {
         position: 'absolute',
-        top: '100px'
+        top: '100px',
+        zIndex: '5'
       }});
     } else {
       this.setState({sidebarPosition: {
         position: 'fixed',
-        top: '25px'
+        top: '25px',
+        zIndex: '1001'
       }});
     }
 
