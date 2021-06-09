@@ -29,6 +29,7 @@ class App extends React.Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.setSidebarPosition);
+    window.addEventListener('resize', this.handleWindowResize);
 
     const body = document.body;
 
@@ -51,6 +52,15 @@ class App extends React.Component {
     content.async = true;
     content.src = 'https://charlotte-badger-course-content-bundles.s3.eu-west-2.amazonaws.com/course-content.js';
     body.appendChild(content);
+
+    // let content = document.createElement('script');
+    // content.async = true;
+    // content.src = 'https://127.0.0.1:9800/bundle';
+    // body.appendChild(content);
+  }
+
+  handleWindowResize() {
+
   }
 
   setSidebarPosition() {
