@@ -1,6 +1,6 @@
 import React from 'react';
 import qs from 'qs';
-import {CourseContent, Sidebar, Container, Reviews, InnerContainer, Overview, SidebarAbs} from './StyledComponents.js';
+import {Pride, CourseContent, Sidebar, Container, Reviews, InnerContainer, Overview, TopContainer, Featured} from './StyledComponents.js';
 import SelectCourse from './SelectCourse.jsx';
 
 class App extends React.Component {
@@ -53,10 +53,11 @@ class App extends React.Component {
     content.src = 'https://charlotte-badger-course-content-bundles.s3.eu-west-2.amazonaws.com/course-content.js';
     body.appendChild(content);
 
-    // let content = document.createElement('script');
-    // content.async = true;
-    // content.src = 'https://127.0.0.1:9800/bundle';
-    // body.appendChild(content);
+    let author = document.createElement('script');
+    author.async = true;
+    author.src = 'https://charlotte-badger-author.s3.amazonaws.com/author.js';
+    body.appendChild(author);
+
   }
 
   handleWindowResize() {
@@ -112,15 +113,20 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <Pride />
         <div style={this.state.courseId ? {display: 'block'} : {display: 'none'}}>
-          <Overview id="overview"></Overview>
           <Container>
+            <Sidebar id="sidebar" style={this.state.sidebarPosition} ></Sidebar>
+            <TopContainer>
+              <Overview id="overview"></Overview>
+            </TopContainer>
             <InnerContainer>
               <div style={{display: 'inline-block'}}>
                 <CourseContent id="content"></CourseContent>
+                <Featured id='featured' />
+                <div id='author' />
                 <Reviews id="reviews"></Reviews>
               </div>
-              <Sidebar id="sidebar" style={this.state.sidebarPosition} ></Sidebar>
             </InnerContainer>
           </Container>
         </div>
