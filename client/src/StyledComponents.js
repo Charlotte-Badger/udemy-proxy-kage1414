@@ -33,17 +33,6 @@ export const fadeIn = keyframes`
 `;
 
 export const Sidebar = styled.div`
-  /* float: right;
-  margin-left: 50px;
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08), 0 4px 12px 0 rgba(0, 0, 0, 0.08);
-  display: inline-block;
-  position: fixed;
-  top: 25px;
-  animation-name: ${fadeIn}; */
-
-
   float: right;
   margin-top: 110px;
   margin-left: 700px;
@@ -64,19 +53,9 @@ export const Overview = styled.div`
 export const TopContainer = styled.div`
   margin-left: 0;
   margin-right: 0;
-  /* width: 1080px;
-  padding-top: 1px; */
   background-color: black;
   position: relative;
-  /* z-index: 1000; */
 `;
-
-// export const OverviewBackground = styled.div`
-//   height: 80px;
-//   width: 100%;
-//   background-color: #1e1e1c;
-//   position: fixed;
-// `;
 
 export const Featured = styled.div`
   margin-top: 32px;

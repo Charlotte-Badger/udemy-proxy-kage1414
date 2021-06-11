@@ -113,19 +113,20 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        {/* <div id='infobar' /> */}
         <Pride />
         <div style={this.state.courseId ? {display: 'block'} : {display: 'none'}}>
           <Container>
-            <Sidebar id="sidebar" style={this.state.sidebarPosition} ></Sidebar>
+            <Sidebar id="sidebar" style={this.state.sidebarPosition} />
             <TopContainer>
-              <Overview id="overview"></Overview>
+              <Overview id="overview" />
             </TopContainer>
             <InnerContainer>
               <div style={{display: 'inline-block'}}>
-                <CourseContent id="content"></CourseContent>
+                <CourseContent id="content" />
                 <Featured id='featured' />
                 <div id='author' />
-                <Reviews id="reviews"></Reviews>
+                <Reviews id="reviews" />
               </div>
             </InnerContainer>
           </Container>
