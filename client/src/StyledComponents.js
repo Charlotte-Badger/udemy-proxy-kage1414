@@ -1,5 +1,21 @@
 import styled, {keyframes} from 'styled-components';
 
+export const BlackBar = styled.div`
+  width: 100%;
+  background-color: #1e1e1c;
+  height: 378px;
+  position: absolute;
+  top: 0px;
+`;
+
+export const SmallBlackBar = styled.div`
+  width: 100%;
+  background-color: #1e1e1c;
+  height: 78px;
+  position: fixed;
+  top: 0px;
+`;
+
 export const Container = styled.div`
   width: 1080px;
   margin-left: auto;
@@ -8,10 +24,15 @@ export const Container = styled.div`
   padding-right: 40px;
 `;
 
-export const InnerContainer = styled.div`
+export const BottomContainer = styled.div`
   width: 1080px;
   margin-left: auto;
   margin-right: auto;
+`;
+
+export const InnerContainer = styled.div`
+  display: inline-block;
+  width: 600px;
 `;
 
 export const Service = styled.div`
