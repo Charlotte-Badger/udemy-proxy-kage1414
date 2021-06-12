@@ -48,14 +48,9 @@ class App extends React.Component {
     sidebar.src = 'https://charlotte-badger-sidebar.s3-us-west-1.amazonaws.com/sidebar.js';
     body.appendChild(sidebar);
 
-    // let content = document.createElement('script');
-    // content.async = true;
-    // content.src = 'https://charlotte-badger-course-content-bundles.s3.eu-west-2.amazonaws.com/course-content.js';
-    // body.appendChild(content);
-
     let content = document.createElement('script');
     content.async = true;
-    content.src = 'http://127.0.0.1:9800/bundle';
+    content.src = 'https://charlotte-badger-course-content-bundles.s3.eu-west-2.amazonaws.com/course-content.js';
     body.appendChild(content);
 
     let author = document.createElement('script');
@@ -118,10 +113,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <BlackBar />
-        <SmallBlackBar />
         {/* <Pride /> */}
         <div style={this.state.courseId ? {display: 'block'} : {display: 'none'}}>
+          <BlackBar />
+          <SmallBlackBar />
           <Container>
             <Sidebar id="sidebar" style={this.state.sidebarPosition} />
             <TopContainer>
