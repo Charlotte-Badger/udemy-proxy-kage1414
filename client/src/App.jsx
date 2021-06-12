@@ -1,6 +1,6 @@
 import React from 'react';
 import qs from 'qs';
-import {Pride, CourseContent, Sidebar, Container, Reviews, InnerContainer, Overview, TopContainer, Featured} from './StyledComponents.js';
+import {Pride, SmallBlackBar, BottomContainer, BlackBar, CourseContent, Sidebar, Container, Reviews, InnerContainer, Overview, TopContainer, Featured} from './StyledComponents.js';
 import SelectCourse from './SelectCourse.jsx';
 
 class App extends React.Component {
@@ -48,9 +48,14 @@ class App extends React.Component {
     sidebar.src = 'https://charlotte-badger-sidebar.s3-us-west-1.amazonaws.com/sidebar.js';
     body.appendChild(sidebar);
 
+    // let content = document.createElement('script');
+    // content.async = true;
+    // content.src = 'https://charlotte-badger-course-content-bundles.s3.eu-west-2.amazonaws.com/course-content.js';
+    // body.appendChild(content);
+
     let content = document.createElement('script');
     content.async = true;
-    content.src = 'https://charlotte-badger-course-content-bundles.s3.eu-west-2.amazonaws.com/course-content.js';
+    content.src = 'http://127.0.0.1:9800/bundle';
     body.appendChild(content);
 
     let author = document.createElement('script');
@@ -113,21 +118,24 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Pride />
+        <BlackBar />
+        <SmallBlackBar />
+        {/* <Pride /> */}
         <div style={this.state.courseId ? {display: 'block'} : {display: 'none'}}>
           <Container>
-            <Sidebar id="sidebar" style={this.state.sidebarPosition} ></Sidebar>
+            <Sidebar id="sidebar" style={this.state.sidebarPosition} />
             <TopContainer>
-              <Overview id="overview"></Overview>
+              <div id="infobar" />
+              <Overview id="overview" />
             </TopContainer>
-            <InnerContainer>
-              <div style={{display: 'inline-block'}}>
-                <CourseContent id="content"></CourseContent>
+            <BottomContainer>
+              <InnerContainer>
+                <CourseContent id="content" />
                 <Featured id='featured' />
                 <div id='author' />
-                <Reviews id="reviews"></Reviews>
-              </div>
-            </InnerContainer>
+                <Reviews id="reviews" />
+              </InnerContainer>
+            </BottomContainer>
           </Container>
         </div>
         {!this.state.courseId &&
